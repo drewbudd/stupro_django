@@ -4,7 +4,7 @@ from django.db import models
 class CADModel(models.Model):
     model_name = models.CharField(max_length=50)
     checked_out = models.BooleanField(False)
-    ceation_date = models.DateTimeField(_("date imported"), auto_now_add=True)
+    ceation_date = models.DateTimeField(("date imported"), auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -15,17 +15,17 @@ class CADModel(models.Model):
 class Marker(models.Model):
     cad_model = models.ForeignKey("CADModel", on_delete=models.CASCADE)
     marker_name = models.CharField(max_length=100)
-    status = models.ForeignKey("Status", on_delete=models.SET_NULL)
+    status = models.ForeignKey("Status", null=True, on_delete=models.SET_NULL)
     type = models.ForeignKey("Type", on_delete=models.PROTECT)
-    creation_date = models.DateTimeField(_("date created"), auto_now_add=False)
-    coord_x = models.DecimalField(_("x coordinate"), max_digits=6, decimal_places=2)
-    coord_y = models.DecimalField(_("y coordinate"), max_digits=6, decimal_places=2)
-    coord_z = models.DecimalField(_("z coordinate"), max_digits=6, decimal_places=2)
+    creation_date = models.DateTimeField(("date created"), auto_now_add=False)
+    coord_x = models.DecimalField(("x coordinate"), max_digits=6, decimal_places=2)
+    coord_y = models.DecimalField(("y coordinate"), max_digits=6, decimal_places=2)
+    coord_z = models.DecimalField(("z coordinate"), max_digits=6, decimal_places=2)
     comments = models.CharField(max_length=500)
 
     class Meta:
-        verbose_name = _("Marker")
-        verbose_name_plural = _("Markers")
+        verbose_name = ("Marker")
+        verbose_name_plural = ("Markers")
 
     def __str__(self):
         return self.name
@@ -37,8 +37,8 @@ class Status(models.Model):
     status_name = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = _("Status")
-        verbose_name_plural = _("Statuses")
+        verbose_name = ("Status")
+        verbose_name_plural = ("Statuses")
 
     def __str__(self):
         return self.name
@@ -51,8 +51,8 @@ class Type(models.Model):
     
 
     class Meta:
-        verbose_name = _("Type")
-        verbose_name_plural = _("Types")
+        verbose_name = ("Type")
+        verbose_name_plural = ("Types")
 
     def __str__(self):
         return self.name
