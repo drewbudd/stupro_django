@@ -13,7 +13,7 @@ class CADModel(models.Model):
         return reverse("CADModel_detail", kwargs={"pk": self.pk})
 
 class Marker(models.Model):
-    cad_model = models.ForeignKey("CAD Model", on_delete=models.CASCADE)
+    cad_model = models.ForeignKey("CADModel", on_delete=models.CASCADE)
     marker_name = models.CharField(max_length=100)
     status = models.ForeignKey("Status", null=True, on_delete=models.SET_NULL)
     type = models.ForeignKey("Type", on_delete=models.PROTECT)
