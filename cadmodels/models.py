@@ -48,7 +48,6 @@ class Status(models.Model):
 
 class Type(models.Model):
     name = models.CharField(max_length=100)
-    
 
     class Meta:
         verbose_name = ("Type")

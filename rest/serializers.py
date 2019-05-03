@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User, Group
-from cadmodels.models import CADModel, Marker, Status, Type
 from rest_framework import serializers
-
+from cadmodels.models import CADModel, Marker, Status, Type
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -21,15 +20,15 @@ class CADModelSerializer(serializers.HyperlinkedModelSerializer):
 
 class MarkerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = CADModel
+        model = Marker
         fields = ('cad_model', 'name', 'status', 'type', 'creation_date', 'coord_x', 'coord_y', 'coord_z', 'comments')
 
 class StatusSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = CADModel
+        model = Status
         fields = ('name')
 
 class TypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = CADModel
+        model = Type
         fields = ('name')

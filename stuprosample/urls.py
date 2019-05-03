@@ -17,16 +17,18 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from rest import views
+#from rest.views import UserViewSet, GroupViewSet
+#from cadmodels.views import CADModelViewSet, MarkerViewSet, StatusViewSet, TypeViewSet
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserSerializer)
-router.register(r'groups', views.GroupSerializer)
-router.register(r'cadmodels', views.CADModelSerializer)
-router.register(r'markers', views.MarkerSerializer)
-router.register(r'statuses', views.StatusSerializer)
-router.register(r'types', views.TypeSerializer)
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'cadmodels', views.CADModelViewSet)
+router.register(r'markers', views.MarkerViewSet)
+router.register(r'statuses', views.StatusViewSet)
+router.register(r'types', views.TypeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rest/', include(router.url))
+    path('rest/', include(router.urls))
 ]
