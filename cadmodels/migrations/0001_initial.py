@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='CADModel',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('model_name', models.CharField(max_length=50)),
+                ('name', models.CharField(max_length=50)),
                 ('checked_out', models.BooleanField(verbose_name=False)),
                 ('ceation_date', models.DateTimeField(auto_now_add=True, verbose_name='date imported')),
             ],
@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             name='Status',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('status_name', models.CharField(max_length=50)),
+                ('name', models.CharField(max_length=50)),
             ],
             options={
                 'verbose_name': 'Status',
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
             name='Type',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type_name', models.CharField(max_length=100)),
+                ('name', models.CharField(max_length=100)),
             ],
             options={
                 'verbose_name': 'Type',
@@ -47,7 +47,7 @@ class Migration(migrations.Migration):
             name='Marker',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('marker_name', models.CharField(max_length=100)),
+                ('name', models.CharField(max_length=100)),
                 ('creation_date', models.DateTimeField(verbose_name='date created')),
                 ('coord_x', models.DecimalField(decimal_places=2, max_digits=6, verbose_name='x coordinate')),
                 ('coord_y', models.DecimalField(decimal_places=2, max_digits=6, verbose_name='y coordinate')),
