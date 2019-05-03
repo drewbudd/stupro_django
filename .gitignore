@@ -4,3 +4,6 @@ staticfiles
 .env
 db.sqlite3
 stuprosample/static
+rest/*
+cadmodels/*
+dataexport/*
