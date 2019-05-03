@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 class CADModel(models.Model):
     name = models.CharField(max_length=50)
-    checked_out = models.BooleanField("Checked out")
-    ceation_date = models.DateTimeField(("date imported"), auto_now_add=True)
+    checked_out = models.BooleanField()
+    import_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name

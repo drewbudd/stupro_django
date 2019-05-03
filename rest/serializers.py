@@ -16,7 +16,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class CADModelSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CADModel
-        fields = ('id', 'name', 'checked_out', 'creation_date')
+        fields = ('id', 'name', 'checked_out', 'import_date')
 
 class MarkerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
