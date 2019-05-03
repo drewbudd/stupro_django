@@ -16,19 +16,19 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class CADModelSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = CADModel
-        fields = ('name', 'checked_out', 'creation_date')
+        fields = ('id', 'name', 'checked_out', 'creation_date')
 
 class MarkerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Marker
-        fields = ('cad_model', 'name', 'status', 'type', 'creation_date', 'coord_x', 'coord_y', 'coord_z', 'comments')
+        fields = ('id', 'cad_model', 'name', 'status', 'type', 'creation_date', 'coord_x', 'coord_y', 'coord_z', 'comments')
 
 class StatusSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Status
-        fields = ('name')
+        fields = ('id', 'name')
 
 class TypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Type
-        fields = ('name')
+        fields = ('id', 'name')
