@@ -1,0 +1,15 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+        <script src="{% static '/css/bootstrap.min.js' %}"></script>
+        <script src="{% static '/css/jquery.min.js' %}"></script>
+        {% block linkscript %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

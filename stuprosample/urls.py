@@ -17,8 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from rest import views
-#from rest.views import UserViewSet, GroupViewSet
-#from cadmodels.views import CADModelViewSet, MarkerViewSet, StatusViewSet, TypeViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -29,6 +27,8 @@ router.register(r'statuses', views.StatusViewSet)
 router.register(r'types', views.TypeViewSet)
 
 urlpatterns = [
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
-    path('rest/', include(router.urls))
+    path('rest/', include(router.urls)),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]

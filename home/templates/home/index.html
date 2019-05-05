@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block linkscript %}
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | Unity Testing</title>
+  <script src="{% static '/WebGL/TemplateData/UnityProgress.js' %}"></script>
+  <script src="{% static '/WebGL/UnityLoader.js' %}"></script>
+  <script>
+    var unityInstance = UnityLoader.instantiate("unityContainer", "{% static '/WebGL/Builds.json' %}", {onProgress: UnityProgress});
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center align-items-center" style="height:100vh">
+      <div class="webgl-content">
+        <div id="unityContainer" style="width: 98vw; height: 98vh"></div>
+        <div class="footer">
+          <!--<div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
