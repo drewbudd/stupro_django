@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cadmodels',
-    'rest',
+    'cadmodels.apps.CadmodelsConfig',
+    'rest.apps.RestConfig',
     'rest_framework',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
+
+LOGIN_REDIRECT_URL = '/'
 
 django_heroku.settings(locals())
 
